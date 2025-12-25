@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bảng Giá Dịch Vụ - Tarot With Mel</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+            animation: fadeIn 1s ease-in;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.2em;
+            font-style: italic;
+            opacity: 0.9;
+        }
+
+        .service-grid {
+            display: grid;
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: slideUp 0.6s ease-out;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        .service-title {
+            font-size: 1.5em;
+            color: #667eea;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .service-title span {
+            font-size: 1.3em;
+        }
+
+        .price-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        .price-table th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .price-table td {
+            padding: 12px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .price-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .price-table tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        .price {
+            color: #e74c3c;
+            font-weight: bold;
+            text-align: right;
+        }
+
+        .note {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 5px;
+            font-size: 0.9em;
+            color: #856404;
+        }
+
+        .special {
+            background: #d1ecf1;
+            border-left: 4px solid #17a2b8;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 5px;
+            font-size: 0.9em;
+            color: #0c5460;
+        }
+
+        .contact {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-top: 30px;
+        }
+
+        .contact h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #333;
+            font-size: 1.1em;
+        }
+
+        .footer {
+            text-align: center;
+            color: white;
+            margin-top: 30px;
+            font-size: 1.1em;
+            animation: fadeIn 1.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .service-card {
+                padding: 20px;
+            }
+
+            .price-table {
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔮 BẢNG GIÁ DỊCH VỤ - TAROT WITH MEL</h1>
+            <p>"Are you okay today?"</p>
+        </div>
+
+        <div class="service-grid">
+            <!-- Tarot - Xem theo câu -->
+            <div class="service-card">
+                <div class="service-title">
+                    <span>🃏</span>
+                    <span>TAROT - XEM THEO CÂU</span>
+                </div>
+                <table class="price-table">
+                    <thead>
+                        <tr>
+                            <th>Dịch vụ</th>
+                            <th class="price">Giá/câu</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Chuyện tình cảm</td>
+                            <td class="price">35.000đ</td>
+                        </tr>
+                        <tr>
+                            <td>Gia đình, bạn bè và các mối quan hệ</td>
+                            <td class="price">30.000đ</td>
+                        </tr>
+                        <tr>
+                            <td>Công việc, học tập</td>
+                            <td class="price">30.000đ</td>
+                        </tr>
+                        <tr>
+                            <td>Tinh thần và vấn đề cá nhân</td>
+                            <td class="price">30.000đ</td>
+                        </tr>
+                        <tr>
+                            <td>Sức khỏe</td>
+                            <td class="price">30.000đ</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Tarot - Xem tương lai tổng quan -->
+            <div class="service-card">
+                <div class="service-title">
+                    <span>🎯</span>
+                    <span>TAROT - XEM TƯƠNG LAI TỔNG QUAN</span>
+                </div>
+                <table class="price-table">
+                    <thead>
+                        <tr>
+                            <th>Dịch vụ</th>
+                            <th class="price">3 ngày</th>
+                            <th class="price">1 tuần</th>
+                            <th class="price">2 tuần</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Chuyện tình cảm</td>
+                            <td class="price">45K</td>
+                            <td class="price">85K</td>
+                            <td class="price">150K</td>
+                        </tr>
+                        <tr>
+                            <td>Tinh thần và vấn đề cá nhân</td>
+                            <td class="price">45K</td>
+                            <td class="price">85K</td>
+                            <td class="price">150K</td>
+                        </tr>
+                        <tr>
+                            <td>Gia đình, bạn bè và các mối quan hệ</td>
+                            <td class="price">45K</td>
+                            <td class="price">85K</td>
+                            <td class="price">150K</td>
+                        </tr>
+                        <tr>
+                            <td>Công việc, học tập</td>
+                            <td class="price">40K</td>
+                            <td class="price">70K</td>
+                            <td class="price">130K</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="note">
+                    📊 Ghi chú: Xem tương lai 2 tuần sẽ xem tổng quan và kèm xem tại 3 thời điểm: đầu tuần, giữa tuần và cuối tuần.
+                </div>
+            </div>
+
+            <!-- Tarot - Xem theo combo -->
+            <div class="service-card">
+                <div class="service-title">
+                    <span>💫</span>
+                    <span>TAROT - XEM THEO COMBO</span>
+                </div>
+                <table class="price-table">
+                    <thead>
+                        <tr>
+                            <th>Dịch vụ</th>
+                            <th class="price">Giá</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Chuyện tình cảm</td>
+                            <td class="price">70.000đ</td>
+                        </tr>
+                        <tr>
+                            <td>Gia đình, bạn bè và các mối quan hệ</td>
+                            <td class="price">70.000đ</td>
+                        </tr>
+                        <tr>
+                            <td>Công việc, học tập</td>
+                            <td class="price">60.000đ</td>
+                        </tr>
+                        <tr>
+                            <td>Tinh thần và vấn đề cá nhân</td>
+                            <td class="price">70.000đ</td>
+                        </tr>
+                        <tr>
+                            <td>Combo 3 câu theo yêu cầu</td>
+                            <td class="price">80.000đ</td>
+                        </tr>
+                        <tr>
+                            <td>Combo 5 câu theo yêu cầu</td>
+                            <td class="price">150.000đ</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="special">
+                    ✨ Đặc biệt: Xem combo shop sẽ xem ở tình trạng hiện tại, tương lai bên cạnh đó sẽ thêm những thông tin khác. Tuy nhiên sẽ là thông tin tổng quan đôi khi sẽ không chi tiết như câu theo yêu cầu.
+                </div>
+            </div>
+
+            <!-- Tarot - Các dịch vụ sẵn -->
+            <div class="service-card">
+                <div class="service-title">
+                    <span>🌸</span>
+                    <span>TAROT - CÁC DỊCH VỤ SẴN</span>
+                </div>
+                <table class="price-table">
+                    <thead>
+                        <tr>
+                            <th>Dịch vụ</th>
+                            <th class="price">Giá</th>
+                            <th>Ghi chú</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Gỡ rối chuyện tình cảm</td>
+                            <td class="price">150K</td>
+                            <td>Người này trong mối quan hệ như thế nào? Mối quan hệ sẽ ra sao? Nên làm gì?</td>
+                        </tr>
+                        <tr>
+                            <td>Chữa lành</td>
+                            <td class="price">300K</td>
+                            <td>Hôm nay cậu có ổn không? Tinh thần của cậu hiện giờ như thế nào? Shop sẽ cùng bạn chia sẻ.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Tarot - Soi người khác -->
+            <div class="service-card">
+                <div class="service-title">
+                    <span>👥</span>
+                    <span>TAROT - SOI NGƯỜI KHÁC</span>
+                </div>
+                <table class="price-table">
+                    <thead>
+                        <tr>
+                            <th>Dịch vụ</th>
+                            <th class="price">Giá</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Soi tính cách</td>
+                            <td class="price">100.000đ</td>
+                        </tr>
+                        <tr>
+                            <td>Soi các mối quan hệ bạn bè</td>
+                            <td class="price">80.000đ</td>
+                        </tr>
+                        <tr>
+                            <td>Soi mối quan hệ tình cảm</td>
+                            <td class="price">90.000đ</td>
+                        </tr>
+                        <tr>
+                            <td>Soi tổng quát</td>
+                            <td class="price">259.000đ</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Xem kết hợp Tarot + Clow -->
+            <div class="service-card">
+                <div class="service-title">
+                    <span>🌟</span>
+                    <span>XEM KẾT HỢP TAROT + CLOW</span>
+                </div>
+                <table class="price-table">
+                    <thead>
+                        <tr>
+                            <th>Dịch vụ</th>
+                            <th class="price">1 tuần</th>
+                            <th class="price">2 tuần</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Chuyện tình cảm</td>
+                            <td class="price">100K</td>
+                            <td class="price">189K</td>
+                        </tr>
+                        <tr>
+                            <td>Gia đình, bạn bè và các mối quan hệ</td>
+                            <td class="price">90K</td>
+                            <td class="price">169K</td>
+                        </tr>
+                        <tr>
+                            <td>Công việc, học tập</td>
+                            <td class="price">95K</td>
+                            <td class="price">179K</td>
+                        </tr>
+                        <tr>
+                            <td>Tinh thần và vấn đề cá nhân</td>
+                            <td class="price">100K</td>
+                            <td class="price">189K</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="special">
+                    ✨ Đặc biệt: Kết hợp Tarot và Clow để có cái nhìn toàn diện và chính xác hơn về tình huống của bạn.
+                </div>
+            </div>
+
+            <!-- Clow - Xem tương lai tổng quan -->
+            <div class="service-card">
+                <div class="service-title">
+                    <span>⚖</span>
+                    <span>CLOW - XEM TƯƠNG LAI TỔNG QUAN</span>
+                </div>
+                <table class="price-table">
+                    <thead>
+                        <tr>
+                            <th>Dịch vụ</th>
+                            <th class="price">Giá</th>
+                            <th>Ghi chú</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1 chuyện sắp tới</td>
+                            <td class="price">15K</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>1 lời cảnh báo cần biết</td>
+                            <td class="price">20K</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Tổng quan tuần</td>
+                            <td class="price">75K</td>
+                            <td>Chỉ xem sự việc có khả năng cao xảy ra</td>
+                        </tr>
+                        <tr>
+                            <td>Tổng quan 2 tuần</td>
+                            <td class="price">150K</td>
+                            <td>Chỉ xem sự việc có khả năng cao xảy ra</td>
+                        </tr>
+                        <tr>
+                            <td>Tổng quan tháng</td>
+                            <td class="price">300K</td>
+                            <td>Xem sự việc có khả năng xảy ra từng tuần</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="note">
+                    ⏰ Điều kiện: Do bài Clow có hạn nên shop chỉ xem 1 tuần 10 lá thôi nhé. Có thắc mắc thì inbox shop để shop tư vấn thêm.
+                </div>
+            </div>
+
+            <!-- Kinh Dịch -->
+            <div class="service-card">
+                <div class="service-title">
+                    <span>📊</span>
+                    <span>KINH DỊCH (Xem 1 Quẻ)</span>
+                </div>
+                <table class="price-table">
+                    <thead>
+                        <tr>
+                            <th>Dịch vụ</th>
+                            <th class="price">Giá</th>
+                            <th>Ghi chú</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Tổng quan toàn bộ lá bài</td>
+                            <td class="price">150K</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Xem về sức khỏe</td>
+                            <td class="price">60K</td>
+                            <td>Chỉ là phương pháp hỗ trợ, vẫn nên đi bác sĩ!</td>
+                        </tr>
+                        <tr>
+                            <td>Xem về đường duyên</td>
+                            <td class="price">70K</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Xem về công việc</td>
+                            <td class="price">100K</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Xem về 1 ai đó (1 vấn đề)</td>
+                            <td class="price">80K</td>
+                            <td>-</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="note">
+                    🎁 Ưu đãi: 1 tuần shop chỉ nhận xem 3 quẻ
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact -->
+        <div class="contact">
+            <h2>📞 LIÊN HỆ</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    📘 Facebook: Tarot - Trải bài và trải lòng
+                </div>
+                <div class="contact-item">
+                    🎵 TikTok: MEL (@pqb_9240)
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>🐾 Chúc bạn có trải nghiệm tốt với dịch vụ của Mel! 🐾</p>
+        </div>
+    </div>
+</body>
+</html>
